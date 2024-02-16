@@ -6,17 +6,21 @@ public class GestioneArray{
         int counter =0;
         int pos;
         int opzione =0;
+        int canc;
+        int contac;
         Random generatore = new Random();
         int [] numeri = new int[100];
         do{
             pos =0;
+            contac =0;
             System.out.println("Scegli un'opzione");
             System.out.println("1_Caricamento da tastiera");
             System.out.println("2_Caricamento casuale");
             System.out.println("3_Visualizzazione");
             System.out.println("4_Inserimento in posizione");
             System.out.println("5_Cancellazione di un elemento creato");
-            System.out.println("6_Esci");
+            System.out.println("6_Cancellazione di tutti gli elementi simili");
+            System.out.println("7_Esci");
             opzione = in.nextInt();
             switch(opzione){
                 case 1:
@@ -52,10 +56,23 @@ public class GestioneArray{
                     counter = counter-1;
                     break;
                 case 6:
+                    System.out.println("Scegli il numero da cancellare");
+                    canc = in.nextInt();
+                    for(int i =counter;i!=0;i=i-1){
+                        if (numeri [i] == canc){
+                            pos = numeri [i];
+                            counter = counter-1;
+                            for(int a =pos;a<=counter;a++){
+                                numeri [a+1] = numeri [a];
+                            }
+
+                        }
+                    }
+                case 7:
                     break;
                 default:
                     System.out.println("Opzione non valida");
             }
-        }while (opzione!=6);
+        }while (opzione!=7);
     }
 }

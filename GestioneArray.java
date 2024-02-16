@@ -58,12 +58,11 @@ public class GestioneArray{
                 case 6:
                     System.out.println("Scegli il numero da cancellare");
                     canc = in.nextInt();
-                    for(int i =counter;i!=0;i=i-1){
+                    for(int i =0;i<=counter;i++){
                         if (numeri [i] == canc){
-                            pos = numeri [i];
                             counter = counter-1;
-                            for(int a =pos;a<=counter;a++){
-                                numeri [a+1] = numeri [a];
+                            for(int a =i;a<=counter;a++){
+                                numeri [a] = numeri [a+1];
                             }
 
                         }
